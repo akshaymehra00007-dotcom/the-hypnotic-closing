@@ -1,0 +1,7 @@
+{
+  "name": "the-hypnotic-closing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Hypnotic Closing brand website",
+  "scripts": {"start": "node server.mjs", "check": "node --check dist/app.js"}
+}
