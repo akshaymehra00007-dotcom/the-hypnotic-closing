@@ -42,7 +42,7 @@ art.addEventListener('pointermove', event => {
   art.style.setProperty('--hero-y',String(((event.clientY-bounds.top)/bounds.height-.5)*2));
 });
 art.addEventListener('pointerleave',()=>{art.style.setProperty('--hero-x','0');art.style.setProperty('--hero-y','0');});
-document.querySelectorAll('.pill').forEach(button=>{
+document.querySelectorAll('.pill:not(.symbiote-button)').forEach(button=>{
   button.addEventListener('pointermove', event=>{
     if(motionQuery.matches || !finePointer.matches) return;
     const rect=button.getBoundingClientRect();
@@ -75,3 +75,4 @@ window.addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimati
 window.addEventListener('resize',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(updateScroll);});
 motionQuery.addEventListener('change',()=>{if(motionQuery.matches){activeAnimations.forEach(animation=>animation.cancel());activeAnimations.clear();}});
 updateScroll();
+
